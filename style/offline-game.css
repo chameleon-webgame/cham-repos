@@ -12,6 +12,8 @@ html, body {
   flex-direction: column;
 }
 body {
+  display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -19,7 +21,7 @@ body {
   width: 100vw;
   
   background-image: 
-    url('img/Group1.png');
+    url('../img/Group1.png');
   
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,11 +29,11 @@ body {
   transition: 0.5s ease, color 0.5s ease;
 }
 html.dark body {
-  background-image: url('img/Group1.png'), linear-gradient(167.96deg, #2A2A2A 0%, #0A0A0A 100%);
+  background-image: url('../img/Group1.png'), linear-gradient(167.96deg, #2A2A2A 0%, #0A0A0A 100%);
   color: white;
 }
 html.light body {
-  background-image: url('img/Group1.png'), linear-gradient(167.96deg, #FFFFFF 0%, #77DF9F 65.38%, #274834 100%);
+  background-image: url('../img/Group1.png'), linear-gradient(167.96deg, #FFFFFF 0%, #77DF9F 65.38%, #274834 100%);
   color: black;
 }
 
@@ -39,7 +41,7 @@ html.light body {
     position: relative;
     display: flex;
     align-items: center;
-    height: 118.2px;
+    height: 100px;
 }
 .backbutton {
     display: flex;
@@ -66,4 +68,43 @@ html.light .backbutton {
 .title {
   display: inline-block;
   width: 100vw;
+}
+
+#cards {
+  position: relative; /* контейнер для позиционирования */
+  width: 250px;
+  height: 400px;
+}
+.player-line {
+  display: flex;
+  justify-content: space-between; /* лево и право */
+  align-items: center;
+  
+}
+.card {
+  position: absolute; /* накладываем */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2F2F2F;
+  border-radius: 15px;
+  width: 250px;
+  height: 400px;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.chameleon-card {
+  background: linear-gradient( #2F2F2F 0%, #518364 100%);
+  color: #fff; /* текст светлый */
+}
+.chameleon-label {
+  color: #77DF9F; /* ярко-красный для надписи */
+  font-weight: bold;
+  font-size: 30px; /* по желанию */
 }

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  
   // === ТЕМА И НАЗАД КНОПКА ===
   const backBtn = document.getElementById("back-button");
   const backIcon = backBtn?.querySelector("img");
@@ -78,6 +79,36 @@ document.addEventListener("DOMContentLoaded", () => {
       updateUI();
     }
   });
+
+  document.getElementById("start-button").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // Всегда берём текущее число игроков и хамелеонов
+  const data = {
+    players: players,
+    chameleons: chameleons,
+    topic: "Places"
+  };
+
+  // === СНОВА создаём новый массив ролей ===
+  const roles = Array(players).fill("обычный");
+  let count = 0;
+  while (count < chameleons) {
+    let idx = Math.floor(Math.random() * players);
+    if (roles[idx] === "обычный") {
+      roles[idx] = "хамелеон";
+      count++;
+    }
+  }
+
+  data.roles = roles;
+
+  // Перезаписываем sessionStorage
+  sessionStorage.setItem("gameData", JSON.stringify(data));
+
+  // Переход на страницу игры
+  location.href = "offline-game.html";
+});
 
   updateUI();
 });
