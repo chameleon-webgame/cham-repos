@@ -19,7 +19,7 @@ body {
   width: 100vw;
   
   background-image: 
-    url('/chameleon-1/img/Group1.png');
+    url('/cham-repos/img/Group1.png');
   
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,11 +27,11 @@ body {
   transition: 0.5s ease, color 0.5s ease;
 }
 html.dark body {
-  background-image: url('/chameleon-1/img/Group1.png'), linear-gradient(167.96deg, #2A2A2A 0%, #0A0A0A 100%);
+  background-image: url('/cham-repos/img/Group1.png'), linear-gradient(167.96deg, #2A2A2A 0%, #0A0A0A 100%);
   color: white;
 }
 html.light body {
-  background-image: url('/chameleon-1/img/Group1.png'), linear-gradient(167.96deg, #FFFFFF 0%, #77DF9F 65.38%, #274834 100%);
+  background-image: url('/cham-repos/img/Group1.png'), linear-gradient(167.96deg, #FFFFFF 0%, #77DF9F 65.38%, #274834 100%);
   color: black;
 }
 
