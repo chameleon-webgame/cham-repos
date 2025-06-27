@@ -1,0 +1,20 @@
+{
+  "name": "Chameleon Web-game",
+  "short_name": "Chameleon",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#1D1D1D",
+  "theme_color": "#1D1D1D",
+  "icons": [
+    {
+      "src": "img/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
