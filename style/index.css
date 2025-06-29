@@ -31,7 +31,7 @@ body.dark .background-layer {
 }
 
 body.light .background-layer {
-  background-image: linear-gradient(167.96deg, #FFFFFF 0%, #77DF9F 65.38%, #274834 100%),
+  background-image: linear-gradient(167.96deg, #FFFFFF 0%, #FFFFFF 30%, #77DF9F 100%),
                     url('../img/Group1.png');
   background-blend-mode: overlay;
 }

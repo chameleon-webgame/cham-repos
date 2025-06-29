@@ -33,7 +33,7 @@ html.dark body {
   color: white;
 }
 html.light body {
-  background-image: url('../img/Group1.png'), linear-gradient(167.96deg, #FFFFFF 0%, #77DF9F 65.38%, #274834 100%);
+  background-image: url('../img/Group1.png'), linear-gradient(167.96deg, #FFFFFF 0%, #FFFFFF 30%, #77DF9F 100%);
   color: black;
 }
 
@@ -81,6 +81,9 @@ html.light .backbutton {
   align-items: center;
   
 }
+.cards-container {
+  margin-top: 20px;
+}
 .card {
   position: absolute; /* накладываем */
   top: 0;
@@ -96,11 +99,11 @@ html.light .backbutton {
   justify-content: space-between;
   color: #FFFFFF;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 .chameleon-card {
-  background: linear-gradient( #2F2F2F 0%, #518364 100%);
+  background: linear-gradient( #2F2F2F 0%, #2F2F2F 10%, #518364 50%, #2F2F2F 80%, #2F2F2F 100%);
   color: #fff; /* текст светлый */
 }
 .chameleon-label {
