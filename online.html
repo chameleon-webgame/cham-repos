@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chameleon Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Russo+One&display=swap" rel="stylesheet">
+
+    <script>
+    (function () {
+        const theme = localStorage.getItem("theme") || "dark";
+        document.documentElement.classList.add(theme);
+    })();
+    </script>
+
+    <meta name="theme-color" id="meta-theme-color" content="#0A0A0A">
+    <link rel="stylesheet" href="style/online.css">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="img/icon192.png">
+    <link rel="apple-touch-icon" href="img/icon192.png">
+
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+
+    <div class="container1">
+        <button class="backbutton" onclick="window.history.back()" id="back-button">
+            <img src="img/back.png" alt="" class="goback">
+        </button>
+
+        <img src="img/Group 8 (1).png" alt="" class="title">
+    </div>
+
+    <div class="container2">
+        <p class="oops" data-i18n="oopsLabel">Online game mode is not working yet . . .</p>
+    </div>
+
+
+    <script src="script/online.js"></script>
+    
+</body>
+</html>

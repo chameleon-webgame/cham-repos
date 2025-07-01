@@ -1,0 +1,86 @@
+* {
+  font-family: 'Russo One', sans-serif;
+  font-weight: 100;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+  
+  background-image: 
+    url('../img/Group1.png');
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s ease, color 0.5s ease;
+}
+html.dark body {
+  background-image: url('../img/Group1.png'), linear-gradient(167.96deg, #2A2A2A 0%, #0A0A0A 100%);
+  color: white;
+}
+html.light body {
+  background-image: url('../img/Group1.png'), linear-gradient(167.96deg, #FFFFFF 0%, #FFFFFF 30%, #77DF9F 100%);
+  color: black;
+}
+
+.container1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+.backbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    margin-left: 20px;
+}
+.goback {
+    margin-right: 4px;
+    width: 13px;
+}
+html.dark .backbutton {
+  background-color: #77DF9F;
+}
+/* Цвет для светлой темы */
+html.light .backbutton {
+  background-color: #2F2F2F;
+}
+.title {
+  display: inline-block;
+  width: 100vw;
+}
+
+.container2 {
+    background-color: #2F2F2F;
+    display: flex;
+    margin: 30px;
+    margin-top: 200px;
+    border-radius: 20px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.oops {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
