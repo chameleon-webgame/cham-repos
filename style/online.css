@@ -40,6 +40,9 @@ html.light body {
     display: flex;
     align-items: center;
     height: 100px;
+    height: fixed;
+    min-height: 100px;
+    max-height: 100px;
 }
 .backbutton {
     display: flex;
@@ -68,6 +71,12 @@ html.light .backbutton {
   width: 100vw;
 }
 
+.cont2 {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
 .container2 {
     background-color: #2F2F2F;
     display: flex;

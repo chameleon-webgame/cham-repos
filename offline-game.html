@@ -26,15 +26,21 @@
     <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body>
-    <div class="container1">
+    <header class="container1">
         <button class="backbutton" onclick="window.history.back()" id="back-button">
             <img src="img/back.png" alt="" class="goback">
         </button>
 
         <img src="img/Group 8 (1).png" alt="" class="title">
-    </div>
+    </header>
 
     <div class="cards-container" id="cards"></div>
+
+    <div class="end-screen hidden" id="end-screen">
+        <button id="restart-button" data-i18n="playAgain">Restart</button>
+        <button id="end-game-btn" data-i18n="home">Finish the game</button>
+    </div>
+
 
     
 

@@ -42,6 +42,8 @@ html.light body {
     display: flex;
     align-items: center;
     height: 100px;
+    min-height: 100px;
+    max-height: 100px;
 }
 .backbutton {
     display: flex;
@@ -74,6 +76,10 @@ html.light .backbutton {
   position: relative; /* контейнер для позиционирования */
   width: 250px;
   height: 400px;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 400px;
+  max-height: 400px;
 }
 .player-line {
   display: flex;
@@ -85,7 +91,7 @@ html.light .backbutton {
   margin-top: 20px;
 }
 .card {
-  position: absolute; /* накладываем */
+  position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -101,13 +107,91 @@ html.light .backbutton {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+.player-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card-content p {
+  margin: 0;
+  margin-top: 20px;
+}
+
+.cover {
+  position: absolute;
+  inset: 0;
+  background: url('../img/card\ back.png') center/cover no-repeat;
+  cursor: pointer;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cover.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .chameleon-card {
-  background: linear-gradient( #2F2F2F 0%, #2F2F2F 10%, #518364 50%, #2F2F2F 80%, #2F2F2F 100%);
-  color: #fff; /* текст светлый */
+  background: linear-gradient(#2F2F2F 0%, #2F2F2F 10%, #518364 50%, #2F2F2F 90%, #2F2F2F 100%);
+  color: #fff;
 }
+
 .chameleon-label {
-  color: #77DF9F; /* ярко-красный для надписи */
+  color: #77DF9F;
   font-weight: bold;
-  font-size: 30px; /* по желанию */
+  font-size: 30px;
 }
+
+.card.swipe-left {
+  transform: translateX(-400px) rotate(-20deg);
+  opacity: 0;
+}
+
+.card.swipe-right {
+  transform: translateX(400px) rotate(20deg);
+  opacity: 0;
+}
+
+
+
+
+.end-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.end-screen.hidden {
+  display: none;
+}
+
+.end-screen button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #2F2F2F;
+  color: #fff;
+  width: 250px;;
+}
+
+.end-screen button:hover {
+  background: #444;
+}
+
