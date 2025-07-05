@@ -195,3 +195,12 @@ html.light .backbutton {
   background: #444;
 }
 
+.card-content.hidden {
+  display: none;
+}
+
+
+.word-label {
+  font-size: 30px;
+}
+

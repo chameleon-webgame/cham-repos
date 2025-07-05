@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  
   // === ТЕМА И НАЗАД КНОПКА ===
   const backBtn = document.getElementById("back-button");
   const backIcon = backBtn?.querySelector("img");
@@ -8,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     backIcon.src = currentTheme === "dark" ? "img/back.png" : "img/back2.png";
   }
 
-  // === ПЕРЕВОДЫ (должны быть объявлены раньше, чем applyLang) ===
+  // === ПЕРЕВОДЫ ===
   const translations = {
     en: {
       playersLabel: "NUMBER OF PLAYERS:",
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
-  // === ЯЗЫК ===
   const currentLang = localStorage.getItem("lang") || "en";
   applyLang(currentLang);
 
@@ -38,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // === СЧЁТЧИКИ ===
   const playerCountEl = document.querySelector(".players-count");
   const chameleonCountEl = document.querySelector(".chameleons-count");
-
   const playerControls = document.querySelector(".contain2-1");
   const chameleonControls = document.querySelector(".contain2-2");
 
@@ -80,35 +77,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // === ПРИ НАЖАТИИ "НАЧАТЬ" ===
   document.getElementById("start-button").addEventListener("click", (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  // Всегда берём текущее число игроков и хамелеонов
-  const data = {
-    players: players,
-    chameleons: chameleons,
-    topic: "Places"
-  };
+    // Загружаем topics.json
+    fetch("topics.json")
+      .then(res => res.json())
+      .then(data => {
+        const topics = data.topics;
 
-  // === СНОВА создаём новый массив ролей ===
-  const roles = Array(players).fill("обычный");
-  let count = 0;
-  while (count < chameleons) {
-    let idx = Math.floor(Math.random() * players);
-    if (roles[idx] === "обычный") {
-      roles[idx] = "хамелеон";
-      count++;
-    }
-  }
+        const randomTopic = topics[Math.floor(Math.random() * topics.length)];
+        const randomWord = randomTopic.words[Math.floor(Math.random() * randomTopic.words.length)];
 
-  data.roles = roles;
+        // Генерация ролей
+        const roles = Array(players).fill("обычный");
+        let count = 0;
+        while (count < chameleons) {
+          let idx = Math.floor(Math.random() * players);
+          if (roles[idx] === "обычный") {
+            roles[idx] = "хамелеон";
+            count++;
+          }
+        }
 
-  // Перезаписываем sessionStorage
-  sessionStorage.setItem("gameData", JSON.stringify(data));
+        // Сохраняем всё в sessionStorage
+        const gameData = {
+          topic: randomTopic.topic[currentLang],
+          word: randomWord[currentLang],
+          roles: roles
+        };
 
-  // Переход на страницу игры
-  location.href = "offline-game.html";
-});
+        sessionStorage.setItem("gameData", JSON.stringify(gameData));
+
+        // Переходим на страницу игры
+        location.href = "offline-game.html";
+      })
+      .catch(err => {
+        alert("Ошибка загрузки списка тем");
+        console.error(err);
+      });
+  });
 
   updateUI();
 });

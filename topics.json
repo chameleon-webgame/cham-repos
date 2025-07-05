@@ -1,0 +1,117 @@
+{
+  "topics": [
+    {
+      "topic": { "ru": "Фрукты", "en": "Fruits" },
+      "words": [
+        { "ru": "Яблоко", "en": "Apple" },
+        { "ru": "Банан", "en": "Banana" },
+        { "ru": "Апельсин", "en": "Orange" },
+        { "ru": "Груша", "en": "Pear" },
+        { "ru": "Ананас", "en": "Pineapple" }
+      ]
+    },
+    {
+      "topic": { "ru": "Животные", "en": "Animals" },
+      "words": [
+        { "ru": "Слон", "en": "Elephant" },
+        { "ru": "Кот", "en": "Cat" },
+        { "ru": "Собака", "en": "Dog" },
+        { "ru": "Тигр", "en": "Tiger" },
+        { "ru": "Лиса", "en": "Fox" }
+      ]
+    },
+    {
+      "topic": { "ru": "Города", "en": "Cities" },
+      "words": [
+        { "ru": "Лондон", "en": "London" },
+        { "ru": "Париж", "en": "Paris" },
+        { "ru": "Токио", "en": "Tokyo" },
+        { "ru": "Москва", "en": "Moscow" },
+        { "ru": "Берлин", "en": "Berlin" }
+      ]
+    },
+    {
+      "topic": { "ru": "Профессии", "en": "Professions" },
+      "words": [
+        { "ru": "Врач", "en": "Doctor" },
+        { "ru": "Учитель", "en": "Teacher" },
+        { "ru": "Программист", "en": "Programmer" },
+        { "ru": "Повар", "en": "Chef" },
+        { "ru": "Дизайнер", "en": "Designer" }
+      ]
+    },
+    {
+      "topic": { "ru": "Спорт", "en": "Sports" },
+      "words": [
+        { "ru": "Футбол", "en": "Football" },
+        { "ru": "Баскетбол", "en": "Basketball" },
+        { "ru": "Теннис", "en": "Tennis" },
+        { "ru": "Бокс", "en": "Boxing" },
+        { "ru": "Плавание", "en": "Swimming" }
+      ]
+    },
+    {
+    "topic": {
+      "en": "Musicians",
+      "ru": "Музыканты"
+    },
+    "words": [
+      { "en": "Beethoven", "ru": "Бетховен" },
+      { "en": "Mozart", "ru": "Моцарт" },
+      { "en": "Elvis Presley", "ru": "Элвис Пресли" },
+      { "en": "Michael Jackson", "ru": "Майкл Джексон" },
+      { "en": "Freddie Mercury", "ru": "Фредди Меркьюри" },
+      { "en": "Kurt Cobain", "ru": "Курт Кобейн" },
+      { "en": "Bob Marley", "ru": "Боб Марли" }
+    ]
+  },
+  {
+    "topic": {
+      "en": "Historical Figures",
+      "ru": "Исторические личности"
+    },
+    "words": [
+      { "en": "Napoleon", "ru": "Наполеон" },
+      { "en": "Caesar", "ru": "Цезарь" },
+      { "en": "Genghis Khan", "ru": "Чингисхан" },
+      { "en": "Cleopatra", "ru": "Клеопатра" },
+      { "en": "Alexander the Great", "ru": "Александр Македонский" },
+      { "en": "Lincoln", "ru": "Линкольн" },
+      { "en": "Churchill", "ru": "Черчилль" },
+      { "en": "Hitler", "ru": "Гитлер" }
+    ]
+  },
+  {
+    "topic": {
+      "en": "Space",
+      "ru": "Космос"
+    },
+    "words": [
+      { "en": "Mars", "ru": "Марс" },
+      { "en": "Jupiter", "ru": "Юпитер" },
+      { "en": "Saturn", "ru": "Сатурн" },
+      { "en": "Venus", "ru": "Венера" },
+      { "en": "Pluto", "ru": "Плутон" },
+      { "en": "Sun", "ru": "Солнце" },
+      { "en": "Moon", "ru": "Луна" },
+      { "en": "Milky Way", "ru": "Млечный путь" }
+    ]
+  },
+  {
+    "topic": {
+      "en": "Movies",
+      "ru": "Фильмы"
+    },
+    "words": [
+      { "en": "The Matrix", "ru": "Матрица" },
+      { "en": "Titanic", "ru": "Титаник" },
+      { "en": "The Lord of the Rings", "ru": "Властелин колец" },
+      { "en": "Star Wars", "ru": "Звёздные войны" },
+      { "en": "Interstellar", "ru": "Интерстеллар" },
+      { "en": "Inception", "ru": "Начало" },
+      { "en": "Avatar", "ru": "Аватар" },
+      { "en": "Forrest Gump", "ru": "Форрест Гамп" }
+    ]
+  }
+  ]
+}
