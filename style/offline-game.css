@@ -37,6 +37,18 @@ html.light body {
   color: black;
 }
 
+body.dark .background-layer {
+  background-image: linear-gradient(167.96deg, #2A2A2A 0%, #0A0A0A 100%),
+                    url('../img/Group1.png');
+  background-blend-mode: overlay;
+}
+
+body.light .background-layer {
+  background-image: linear-gradient(167.96deg, #FFFFFF 0%, #FFFFFF 30%, #77DF9F 100%),
+                    url('../img/Group1.png');
+  background-blend-mode: overlay;
+}
+
 .container1 {
     position: relative;
     display: flex;
