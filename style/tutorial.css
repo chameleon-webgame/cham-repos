@@ -39,7 +39,9 @@ html.light body {
     position: relative;
     display: flex;
     align-items: center;
-    height: 118.2px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
 }
 .backbutton {
     display: flex;
@@ -66,4 +68,111 @@ html.light .backbutton {
 .title {
   display: inline-block;
   width: 100vw;
+}
+
+.container2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textontitle {
+  position: absolute;
+  font-size: 25px;
+  color: white;
+}
+.title2 {
+  display: inline-block;
+  width: 100vw;
+}
+
+.container3 {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.game {
+  border: none;
+  background-color: rgb(221, 221, 221);
+  height: 35px;
+  width: 90px;
+  border-radius: 50px;
+}
+.chams {
+  border: none;
+  background-color: #77DF9F;
+  height: 35px;
+  width: 90px;
+  border-radius: 50px;
+}
+.gecks {
+  border: none;
+  background-color: #ffb14b;
+  height: 35px;
+  width: 90px;
+  border-radius: 50px;
+}
+.game :active, 
+.chams :active, 
+.gecks :active {
+  filter: brightness(70%);
+}
+
+.tab-content {
+  display: block;
+}
+
+.tab-content.hidden {
+  display: none;
+}
+
+.container4 {
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.tab-btn.active {
+  background: #333;
+  color: #fff;
+}
+.t1 {
+  text-align: center;
+}
+.t2 {
+  text-align: center;
+}
+.t3 {
+  text-align: center;
+}
+
+.txt {
+  line-height: 30px;
+  color: white;
+}
+.txt2 {
+  line-height: 30px;
+  color: #77DF9F;
+}
+.txt3 {
+  line-height: 30px;
+  color: #ffb14b;
+}
+
+.cont {
+  background-color: #2F2F2F;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 1px;
+  border: none;
+  border-radius: 20px;
+  height: 410px;
+  width: auto;
+  overflow-y: auto;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
 }

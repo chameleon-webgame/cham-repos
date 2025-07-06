@@ -26,6 +26,60 @@
     <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body>
+
+    <header class="container1">
+        <button class="backbutton" onclick="window.history.back()" id="back-button">
+            <img src="img/back.png" alt="" class="goback">
+        </button>
+
+        <img src="img/Group 8 (1).png" alt="" class="title">
+    </header>
+
+    <div class="container2">
+        <p class="textontitle" data-i18n="titleLabel">GAME RULES</p>
+        <img src="img/Group 11.png" alt="" class="title2">
+    </div>
+
+    <div class="container3">
+        <button class="game tab-btn active" data-tab="rules" data-i18n="gameLabel">Игра</button>
+
+        <button class="chams tab-btn" data-tab="chameleon" data-i18n="chamLabel">Хамелеон</button>
+
+        <button class="gecks tab-btn" data-tab="gecko" data-i18n="geckLabel">Геккон</button>
+    </div>
+
+
+    <div class="container4">
+        <div class="tab-content" id="rules">
+            <h2 class="t1" data-i18n="gameplayersLabel">Игра / игроки</h2>
+            <div class="cont">
+                <p class="txt" data-i18n="tx1Label">Все обычные игроки получают карточки с одним и тем же словом, которое соответствует заданной теме. Один или несколько игроков получают скрытую роль — хамелеона или геккона.</p>
+                <p class="txt" data-i18n="tx2Label">Задача игроков — говорить слова или словосочетания, которые ассоциируются с загаданным словом и при этом не раскрывать его полностью. Цель — вычислить лжеца, основываясь на подозрительных или неверных ассоциациях, и проголосовать за него.</p>
+                <p class="txt" data-i18n="tx3Label">Начиная со второго раунда, после того как закончится круг и все скажут свои ассоциации, все голосуют, кто, по их мнению, лжет.</p>
+                <p class="txt" data-i18n="tx4Label">Игроки выигрывают если изгнали хамелеона и получают по 1 очку.</p>
+            </div>
+        </div>
+
+        <div class="tab-content hidden" id="chameleon">
+            <h2 class="t2" data-i18n="chameleonLabel">Хамелеоны</h2>
+            <div class="cont">
+                <p class="txt2" data-i18n="tx5Label">Хамелеон не знает загаданного слова и должен угадывать его, внимательно слушая ассоциации других игроков.</p>
+                <p class="txt2" data-i18n="tx6Label">Его цель — не выдать себя и придумать такую ассоциацию, чтобы казаться обычным игроком. Если в конце его раскрывают, у него всё ещё есть шанс победить — он может попытаться угадать слово.</p>
+                <p class="txt2" data-i18n="tx7Label">Хамелеон побеждает и получает 3 очка, если его не разоблачат или если он угадает слово.</p>
+            </div>
+        </div>
+
+        <div class="tab-content hidden" id="gecko">
+            <h2 class="t3" data-i18n="geckoLabel">Гекконы</h2>
+            <div class="cont">
+                <p class="txt3" data-i18n="tx8Label">Геккон также не знает загаданного слова, но, в отличии от хамелеона, получает другое слово по той же теме.</p>
+                <p class="txt3" data-i18n="tx9Label">Задача геккона — путать игроков и сбивать с толку хамелеона и обычных игроков, давая хитрые ассоциации, близкие к загаданному слову.</p>
+                <p class="txt3" data-i18n="tx10Label">Геккон выигрывает и получает 2 очка, если остаётся нераскрытым до конца игры.</p>
+            </div>
+        </div>
+    </div>
     
+    
+    <script src="script/tutorial.js"></script>
 </body>
 </html>

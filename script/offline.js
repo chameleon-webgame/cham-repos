@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === ТЕМА И НАЗАД КНОПКА ===
+  // === Тема и перевод ===
   const backBtn = document.getElementById("back-button");
   const backIcon = backBtn?.querySelector("img");
   const currentTheme = localStorage.getItem("theme") || "dark";
@@ -7,16 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
     backIcon.src = currentTheme === "dark" ? "img/back.png" : "img/back2.png";
   }
 
-  // === ПЕРЕВОДЫ ===
   const translations = {
     en: {
       playersLabel: "NUMBER OF PLAYERS:",
       chameleonsLabel: "NUMBER OF CHAMELEONS:",
+      geckosLabel: "NUMBER OF GECKOS:",
       startLabel: "START",
     },
     ru: {
       playersLabel: "КОЛИЧЕСТВО ИГРОКОВ:",
       chameleonsLabel: "КОЛИЧЕСТВО ХАМЕЛЕОНОВ:",
+      geckosLabel: "КОЛИЧЕСТВО ГЕККОНОВ:",
       startLabel: "НАЧАТЬ",
     },
   };
@@ -33,55 +34,77 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // === СЧЁТЧИКИ ===
+  // === Счётчики ===
   const playerCountEl = document.querySelector(".players-count");
   const chameleonCountEl = document.querySelector(".chameleons-count");
-  const playerControls = document.querySelector(".contain2-1");
-  const chameleonControls = document.querySelector(".contain2-2");
+  const geckoCountEl = document.querySelector(".geckos-count");
 
   let players = 3;
   let chameleons = 1;
+  let geckos = 0;
 
   function updateUI() {
     playerCountEl.textContent = players;
     chameleonCountEl.textContent = chameleons;
+    geckoCountEl.textContent = geckos;
   }
 
-  playerControls.querySelector(".plus").addEventListener("click", () => {
+  document.querySelector(".plus-p").addEventListener("click", () => {
     players++;
     updateUI();
   });
 
-  playerControls.querySelector(".minus").addEventListener("click", () => {
+  document.querySelector(".minus-p").addEventListener("click", () => {
     if (players > 3) {
       players--;
-      if (chameleons >= players) {
-        chameleons = players - 1;
-        if (chameleons < 1) chameleons = 1;
+      const maxSpecial = Math.max(1, players - 2);
+      while (chameleons + geckos > maxSpecial) {
+        if (geckos > 0) {
+          geckos--;
+        } else if (chameleons > 1) {
+          chameleons--;
+        }
+      }
+      if (chameleons + geckos < 1) {
+        chameleons = 1;
       }
       updateUI();
     }
   });
 
-  chameleonControls.querySelector(".plus").addEventListener("click", () => {
-    if (chameleons < players - 1) {
+  document.querySelector(".plus-c").addEventListener("click", () => {
+    const maxSpecial = Math.max(1, players - 2);
+    if (chameleons + geckos < maxSpecial) {
       chameleons++;
       updateUI();
     }
   });
 
-  chameleonControls.querySelector(".minus").addEventListener("click", () => {
-    if (chameleons > 1) {
+  document.querySelector(".minus-c").addEventListener("click", () => {
+    if (chameleons > 0 && chameleons + geckos > 1) {
       chameleons--;
       updateUI();
     }
   });
 
-  // === ПРИ НАЖАТИИ "НАЧАТЬ" ===
+  document.querySelector(".plus-g").addEventListener("click", () => {
+    const maxSpecial = Math.max(1, players - 2);
+    if (chameleons + geckos < maxSpecial) {
+      geckos++;
+      updateUI();
+    }
+  });
+
+  document.querySelector(".minus-g").addEventListener("click", () => {
+    if (geckos > 0 && chameleons + geckos > 1) {
+      geckos--;
+      updateUI();
+    }
+  });
+
   document.getElementById("start-button").addEventListener("click", (e) => {
     e.preventDefault();
 
-    // Загружаем topics.json
     fetch("topics.json")
       .then(res => res.json())
       .then(data => {
@@ -90,27 +113,40 @@ document.addEventListener("DOMContentLoaded", () => {
         const randomTopic = topics[Math.floor(Math.random() * topics.length)];
         const randomWord = randomTopic.words[Math.floor(Math.random() * randomTopic.words.length)];
 
-        // Генерация ролей
         const roles = Array(players).fill("обычный");
-        let count = 0;
-        while (count < chameleons) {
-          let idx = Math.floor(Math.random() * players);
+        const geckoWords = new Array(players).fill(null);
+
+        let addedChameleons = 0;
+        while (addedChameleons < chameleons) {
+          const idx = Math.floor(Math.random() * players);
           if (roles[idx] === "обычный") {
             roles[idx] = "хамелеон";
-            count++;
+            addedChameleons++;
           }
         }
 
-        // Сохраняем всё в sessionStorage
+        const otherWords = randomTopic.words
+          .map(w => w[currentLang])
+          .filter(w => w !== randomWord[currentLang]);
+
+        let addedGeckos = 0;
+        while (addedGeckos < geckos) {
+          const idx = Math.floor(Math.random() * players);
+          if (roles[idx] === "обычный") {
+            roles[idx] = "геккон";
+            geckoWords[idx] = otherWords[Math.floor(Math.random() * otherWords.length)] || "???";
+            addedGeckos++;
+          }
+        }
+
         const gameData = {
-          topic: randomTopic.topic[currentLang],
+          topic: randomTopic.topic?.[currentLang] || randomTopic.name?.[currentLang],
           word: randomWord[currentLang],
-          roles: roles
+          roles: roles,
+          geckoWords: geckoWords
         };
 
         sessionStorage.setItem("gameData", JSON.stringify(gameData));
-
-        // Переходим на страницу игры
         location.href = "offline-game.html";
       })
       .catch(err => {

@@ -79,8 +79,18 @@ html.light .backbutton {
     background-color: #2F2F2F;
     margin-left: 20px;
     margin-right: 20px;
-    height: 580px;
     border-radius: 20px;
+}
+.container2-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: #2F2F2F;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    margin-top: 10px;
 }
 .contain2-1 {
   display: flex;
@@ -99,6 +109,19 @@ html.light .backbutton {
   align-items: center;
   width: 300px;
   height: 90px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  background-color: #2F2F2F;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+.contain2-3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  height: 90px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   border-radius: 15px;
   background-color: #2F2F2F;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
@@ -135,7 +158,32 @@ html.light .backbutton {
   margin-right: 30px;
 }
 
-.minus {
+.minus-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 33px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+.minusicon, .plusicon {
+    width: 18px;
+}
+.plus-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 33px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    margin-left: 5px;
+}
+
+.minus-c {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,10 +193,7 @@ html.light .backbutton {
     border: none;
     background-color: #77DF9F;
 }
-.minusicon, .plusicon {
-    width: 18px;
-}
-.plus {
+.plus-c {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,13 +205,39 @@ html.light .backbutton {
     margin-left: 5px;
 }
 
-.minus:active,
-.plus:active {
+.minus-g {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 33px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffb14b;
+}
+.plus-g {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 33px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffb14b;
+    margin-left: 5px;
+}
+
+.minus-p:active,
+.plus-p:active,
+.minus-c:active,
+.plus-c:active,
+.minus-g:active,
+.plus-g:active {
   filter: brightness(70%);
 }
 
 .container3 {
-  height: 190px;
+  height: 390px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;

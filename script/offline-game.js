@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === Локализация ===
   const translations = {
     en: {
       player: "PLAYER",
       chameleon: "You are a CHAMELEON",
+      gecko: "You are a GECKO",
       topic: "Topic",
       playAgain: "Restart",
       endGame: "Finish the game",
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ru: {
       player: "ИГРОК",
       chameleon: "Вы — ХАМЕЛЕОН",
+      gecko: "Вы — ГЕККОН",
       topic: "Тема",
       playAgain: "Заново",
       endGame: "Завершить игру",
@@ -22,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentLang = localStorage.getItem("lang") || "en";
   const t = translations[currentLang];
 
-  // === Кнопка назад и тема ===
   const backBtn = document.getElementById("back-button");
   const backIcon = backBtn?.querySelector("img");
   const currentTheme = localStorage.getItem("theme") || "dark";
@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // === Данные игры ===
   const gameData = JSON.parse(sessionStorage.getItem("gameData"));
   if (!gameData) {
     location.href = "offline.html";
@@ -46,25 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("cards");
   const topicWord = gameData.word || "WORD";
 
-  // === Создаём карточки ===
   [...gameData.roles].reverse().forEach((role, index) => {
     const card = document.createElement("div");
     card.classList.add("card");
     card.style.zIndex = index + 1;
 
-    if (role === "хамелеон") {
-      card.classList.add("chameleon-card");
-    }
+    if (role === "хамелеон") card.classList.add("chameleon-card");
+    if (role === "геккон") card.classList.add("gecko-card");
 
-    // Сначала пустой контент и закрывающая обложка
-    card.innerHTML = `
-      <div class="cover"></div>
-      <div class="card-content hidden"></div>
-    `;
-
+    card.innerHTML = `<div class="cover"></div><div class="card-content hidden"></div>`;
     container.appendChild(card);
 
-    // Заполняем содержимое уже ПОСЛЕ вставки
     const content = card.querySelector(".card-content");
     const cover = card.querySelector(".cover");
 
@@ -74,15 +65,25 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="player-number">№ ${gameData.roles.length - index}</span>
       </div>`;
 
-    const wordLine = role === "хамелеон"
-      ? `<p class="chameleon-label">${t.chameleon}</p>`
-      : `<p class="word-label">${topicWord}</p>`;
+    let wordLine = "";
+    if (role === "хамелеон") {
+      wordLine = `<p class="chameleon-label">${t.chameleon}</p>`;
+    } else if (role === "геккон") {
+      const geckoWord = gameData.geckoWords?.[gameData.roles.length - 1 - index] || "???";
+      wordLine = `
+  <div class="gecko-content">
+    <p class="gecko-label">${t.gecko}</p>
+    <p class="g-word-label">${geckoWord}</p>
+  </div>
+`;
+;
+    } else {
+      wordLine = `<p class="word-label">${topicWord}</p>`;
+    }
 
-    const topicLine = `<p>${t.topic}:  ${gameData.topic}</p>`;
-
+    const topicLine = `<p>${t.topic}: ${gameData.topic}</p>`;
     content.innerHTML = `${playerLine}${wordLine}${topicLine}`;
 
-    // Открытие карточки
     cover.addEventListener("click", (e) => {
       cover.classList.add("hidden");
       content.classList.remove("hidden");
@@ -90,11 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // === Логика свайпа ===
   container.querySelectorAll('.card').forEach(card => {
     const cover = card.querySelector(".cover");
-    let startX = 0;
-    let currentX = 0;
+    let startX = 0, currentX = 0;
 
     card.addEventListener('touchstart', e => {
       if (!cover.classList.contains("hidden")) return;
@@ -124,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Свайп мышью
     card.addEventListener('mousedown', e => {
       if (!cover.classList.contains("hidden")) return;
       startX = e.clientX;
@@ -155,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // === Конечные кнопки ===
   document.getElementById("restart-button").textContent = t.playAgain;
   document.getElementById("end-game-btn").textContent = t.endGame;
 
@@ -164,10 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("end-game-btn").addEventListener("click", () => {
-    const confirmEnd = confirm(t.confirmEnd);
-    if (confirmEnd) {
-      window.location.href = "index.html";
+    if (confirm(t.confirmEnd)) {
+      location.href = "index.html";
     }
   });
-
 });
