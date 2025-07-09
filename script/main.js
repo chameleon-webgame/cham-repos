@@ -1,19 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   document
-  .querySelector('meta[name="theme-color"]')
-  .setAttribute("content", "#0A0A0A");
+    .querySelector('meta[name="theme-color"]')
+    .setAttribute("content", "#0A0A0A");
+
   // === ЯЗЫКОВОЙ СЛОВАРЬ ===
   const translations = {
     en: {
       onlineBtn: "ONLINE",
       offlineBtn: "OFFLINE",
       howToPlayBtn: "GAME RULES",
+      qrLabel: "Chameleon game QR-code"
     },
     ru: {
       onlineBtn: "ОНЛАЙН",
       offlineBtn: "ОФЛАЙН",
       howToPlayBtn: "ПРАВИЛА ИГРЫ",
+      qrLabel: "QR-код игры Хамелеон"
     },
   };
 
@@ -24,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // === КНОПКА ЯЗЫКА ===
   const langBtn = document.getElementById("lang-toggle");
   const langIcon = langBtn.querySelector("img");
-
 
   // === НАСТРОЙКИ ПО УМОЛЧАНИЮ ===
   let currentTheme = localStorage.getItem("theme") || "dark";
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentTheme = currentTheme === "dark" ? "light" : "dark";
     localStorage.setItem("theme", currentTheme);
     applyTheme(currentTheme);
-    updateLanguageIcon(currentLang, currentTheme); // обновим иконку языка после смены темы
+    updateLanguageIcon(currentLang, currentTheme);
   });
 
   // === ОБРАБОТЧИК СМЕНЫ ЯЗЫКА ===
@@ -56,10 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
     themeIcon.src = theme === "dark" ? "img/sun.png" : "img/moon2.png";
     updateLanguageIcon(currentLang, theme);
 
-    
     const themeMetaTag = document.querySelector('meta[name="theme-color"]');
     if (themeMetaTag) {
-        themeMetaTag.setAttribute("content", "#0A0A0A");
+      themeMetaTag.setAttribute("content", "#0A0A0A");
     }
   }
 
@@ -89,4 +90,24 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(reg => console.log('✅ Service Worker зарегистрирован:', reg.scope))
       .catch(err => console.error('❌ Ошибка регистрации Service Worker:', err));
   }
+
+  const modal = document.getElementById('centerModal');
+const openBtn = document.getElementById('openModal');
+const closeBtn = document.getElementById('closeModal');
+
+openBtn.addEventListener('click', () => {
+  modal.classList.add('open');
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('open');
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('open');
+  }
+});
+
+
 });
