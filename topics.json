@@ -1,45 +1,53 @@
 {
   "topics": [
     {
-      "topic": { "ru": "Фрукты", "en": "Fruits" },
-      "words": [
-        { "ru": "Яблоко", "en": "Apple" },
-        { "ru": "Банан", "en": "Banana" },
-        { "ru": "Апельсин", "en": "Orange" },
-        { "ru": "Груша", "en": "Pear" },
-        { "ru": "Ананас", "en": "Pineapple" }
-      ]
-    },
+  "topic": { "ru": "Фрукты", "en": "Fruits" },
+  "words": [
+    { "ru": "Яблоко", "en": "Apple" },
+    { "ru": "Банан", "en": "Banana" },
+    { "ru": "Апельсин", "en": "Orange" },
+    { "ru": "Груша", "en": "Pear" },
+    { "ru": "Ананас", "en": "Pineapple" },
+    { "ru": "Виноград", "en": "Grapes" },
+    { "ru": "Киви", "en": "Kiwi" },
+    { "ru": "Персик", "en": "Peach" },
+    { "ru": "Манго", "en": "Mango" },
+    { "ru": "Лимон", "en": "Lemon" }
+  ]
+},
+
     {
-      "topic": { "ru": "Животные", "en": "Animals" },
-      "words": [
-        { "ru": "Слон", "en": "Elephant" },
-        { "ru": "Кот", "en": "Cat" },
-        { "ru": "Собака", "en": "Dog" },
-        { "ru": "Тигр", "en": "Tiger" },
-        { "ru": "Лиса", "en": "Fox" }
-      ]
-    },
+  "topic": { "ru": "Города", "en": "Cities" },
+  "words": [
+    { "ru": "Лондон", "en": "London" },
+    { "ru": "Париж", "en": "Paris" },
+    { "ru": "Токио", "en": "Tokyo" },
+    { "ru": "Москва", "en": "Moscow" },
+    { "ru": "Берлин", "en": "Berlin" },
+    { "ru": "Рим", "en": "Rome" },
+    { "ru": "Мадрид", "en": "Madrid" },
+    { "ru": "Нью-Йорк", "en": "New York" },
+    { "ru": "Сидней", "en": "Sydney" },
+    { "ru": "Дубай", "en": "Dubai" }
+  ]
+},
+
     {
-      "topic": { "ru": "Города", "en": "Cities" },
-      "words": [
-        { "ru": "Лондон", "en": "London" },
-        { "ru": "Париж", "en": "Paris" },
-        { "ru": "Токио", "en": "Tokyo" },
-        { "ru": "Москва", "en": "Moscow" },
-        { "ru": "Берлин", "en": "Berlin" }
-      ]
-    },
-    {
-      "topic": { "ru": "Профессии", "en": "Professions" },
-      "words": [
-        { "ru": "Врач", "en": "Doctor" },
-        { "ru": "Учитель", "en": "Teacher" },
-        { "ru": "Программист", "en": "Programmer" },
-        { "ru": "Повар", "en": "Chef" },
-        { "ru": "Дизайнер", "en": "Designer" }
-      ]
-    },
+  "topic": { "ru": "Профессии", "en": "Professions" },
+  "words": [
+    { "ru": "Врач", "en": "Doctor" },
+    { "ru": "Учитель", "en": "Teacher" },
+    { "ru": "Программист", "en": "Programmer" },
+    { "ru": "Повар", "en": "Chef" },
+    { "ru": "Дизайнер", "en": "Designer" },
+    { "ru": "Инженер", "en": "Engineer" },
+    { "ru": "Фотограф", "en": "Photographer" },
+    { "ru": "Архитектор", "en": "Architect" },
+    { "ru": "Актёр", "en": "Actor" },
+    { "ru": "Менеджер", "en": "Manager" }
+  ]
+},
+
     {
       "topic": { "ru": "Спорт", "en": "Sports" },
       "words": [
@@ -47,7 +55,12 @@
         { "ru": "Баскетбол", "en": "Basketball" },
         { "ru": "Теннис", "en": "Tennis" },
         { "ru": "Бокс", "en": "Boxing" },
-        { "ru": "Плавание", "en": "Swimming" }
+        { "ru": "Плавание", "en": "Swimming" },
+        { "ru": "Бейсбол", "en": "Baseball" },
+        { "ru": "Волейбол", "en": "Volleyball" },
+        { "ru": "Хоккей", "en": "Hockey" },
+        { "ru": "Бокс", "en": "Boxing" },
+        { "ru": "Лыжи", "en": "Skiing" }
       ]
     },
     {
@@ -62,7 +75,10 @@
       { "en": "Michael Jackson", "ru": "Майкл Джексон" },
       { "en": "Freddie Mercury", "ru": "Фредди Меркьюри" },
       { "en": "Kurt Cobain", "ru": "Курт Кобейн" },
-      { "en": "Bob Marley", "ru": "Боб Марли" }
+      { "en": "Bob Marley", "ru": "Боб Марли" },
+      { "en": "Eminem", "ru": "Эминем" },
+      { "en": "Billie Eilish", "ru": "Билли Айлиш" },
+      { "en": "Beyonce", "ru": "Бейонсе" }
     ]
   },
   {
@@ -78,7 +94,9 @@
       { "en": "Alexander the Great", "ru": "Александр Македонский" },
       { "en": "Lincoln", "ru": "Линкольн" },
       { "en": "Churchill", "ru": "Черчилль" },
-      { "en": "Hitler", "ru": "Гитлер" }
+      { "en": "Hitler", "ru": "Гитлер" },
+      { "en": "Stalin", "ru": "Сталин" },
+      { "en": "Darwin", "ru": "Дарвин" }
     ]
   },
   {
@@ -88,13 +106,15 @@
     },
     "words": [
       { "en": "Mars", "ru": "Марс" },
-      { "en": "Jupiter", "ru": "Юпитер" },
+      { "en": "Meteor", "ru": "Метеор" },
       { "en": "Saturn", "ru": "Сатурн" },
-      { "en": "Venus", "ru": "Венера" },
-      { "en": "Pluto", "ru": "Плутон" },
+      { "en": "Star", "ru": "Звезда" },
+      { "en": "Sattelite", "ru": "Спутник" },
       { "en": "Sun", "ru": "Солнце" },
       { "en": "Moon", "ru": "Луна" },
-      { "en": "Milky Way", "ru": "Млечный путь" }
+      { "en": "Milky Way", "ru": "Млечный путь" },
+      { "en": "Astronaut", "ru": "Космонавт" },
+      { "en": "Vacuum", "ru": "Вакуум" }
     ]
   },
   {
@@ -108,10 +128,220 @@
       { "en": "The Lord of the Rings", "ru": "Властелин колец" },
       { "en": "Star Wars", "ru": "Звёздные войны" },
       { "en": "Interstellar", "ru": "Интерстеллар" },
-      { "en": "Inception", "ru": "Начало" },
+      { "en": "Fast and furious", "ru": "Форсаж" },
       { "en": "Avatar", "ru": "Аватар" },
-      { "en": "Forrest Gump", "ru": "Форрест Гамп" }
+      { "en": "Forrest Gump", "ru": "Форрест Гамп" },
+      { "en": "Alien", "ru": "Чужой" },
+      { "en": "Planet of the Apes", "ru": "Планета обезьян" }
     ]
-  }
+  },
+  {
+  "topic": {
+    "en": "Anime",
+    "ru": "Аниме"
+  },
+  "words": [
+    { "en": "Jujutsu Kaisen", "ru": "Магическая битва" },
+    { "en": "Naruto", "ru": "Наруто" },
+    { "en": "Demon Slayer", "ru": "Клинок рассекающий демонов" },
+    { "en": "Solo Leveling", "ru": "Поднятие уровня" },
+    { "en": "Dr. Stone", "ru": "Доктор Стоун" },
+    { "en": "One Piece", "ru": "Ван Пис" },
+    { "en": "Bleach", "ru": "Блич" },
+    { "en": "One Punch Man", "ru": "Ванпанчмен" },
+    { "en": "Attack on Titan", "ru": "Атака Титанов" },
+    { "en": "Berserk", "ru": "Берсерк" }
+  ]
+},
+{
+  "topic": {
+    "en": "TV Shows",
+    "ru": "Сериалы"
+  },
+  "words": [
+    { "en": "Squid Game", "ru": "Игра в кальмара" },
+    { "en": "Stranger Things", "ru": "Очень странные дела" },
+    { "en": "Wednesday", "ru": "Уэнздей" },
+    { "en": "The Walking Dead", "ru": "Ходячие мертвецы" },
+    { "en": "Twilight", "ru": "Сумерки" },
+    { "en": "Breaking Bad", "ru": "Во все тяжкие" },
+    { "en": "Money Heist", "ru": "Бумажный дом" },
+    { "en": "Game of Thrones", "ru": "Игра престолов" },
+    { "en": "Magnificent Century", "ru": "Великолепный век" },
+    { "en": "Sherlock", "ru": "Шерлок" }
+  ]
+},
+{
+  "topic": {
+    "en": "Places",
+    "ru": "Места"
+  },
+  "words": [
+    { "en": "Beach", "ru": "Пляж" },
+    { "en": "Apartment", "ru": "Квартира" },
+    { "en": "Hospital", "ru": "Больница" },
+    { "en": "Street", "ru": "Улица" },
+    { "en": "Bank", "ru": "Банк" },
+    { "en": "Farm", "ru": "Ферма" },
+    { "en": "Hotel", "ru": "Отель" },
+    { "en": "Swimming Pool", "ru": "Бассейн" },
+    { "en": "Supermarket", "ru": "Супермаркет" },
+    { "en": "Theater", "ru": "Театр" },
+    { "en": "Circus", "ru": "Цирк" },
+    { "en": "School", "ru": "Школа" }
+  ]
+},
+{
+  "topic": {
+    "en": "Household Items",
+    "ru": "Бытовые вещи"
+  },
+  "words": [
+    { "en": "Table", "ru": "Стол" },
+    { "en": "Chair", "ru": "Стул" },
+    { "en": "Lamp", "ru": "Лампа" },
+    { "en": "Mirror", "ru": "Зеркало" },
+    { "en": "Clock", "ru": "Часы" },
+    { "en": "TV", "ru": "Телевизор" },
+    { "en": "Sofa", "ru": "Диван" },
+    { "en": "Bed", "ru": "Кровать" },
+    { "en": "Wardrobe", "ru": "Шкаф" },
+    { "en": "Vacuum Cleaner", "ru": "Пылесос" }
+  ]
+},
+{
+  "topic": {
+    "en": "Animals",
+    "ru": "Животные"
+  },
+  "words": [
+    { "en": "Dog", "ru": "Собака" },
+    { "en": "Cat", "ru": "Кошка" },
+    { "en": "Horse", "ru": "Лошадь" },
+    { "en": "Cow", "ru": "Корова" },
+    { "en": "Sheep", "ru": "Овца" },
+    { "en": "Pig", "ru": "Свинья" },
+    { "en": "Rabbit", "ru": "Кролик" },
+    { "en": "Bear", "ru": "Медведь" },
+    { "en": "Wolf", "ru": "Волк" },
+    { "en": "Fox", "ru": "Лиса" }
+  ]
+},
+{
+  "topic": {
+    "en": "Clothes",
+    "ru": "Одежда"
+  },
+  "words": [
+    { "en": "T-shirt", "ru": "Футболка" },
+    { "en": "Shirt", "ru": "Рубашка" },
+    { "en": "Pants", "ru": "Штаны" },
+    { "en": "Jacket", "ru": "Куртка" },
+    { "en": "Dress", "ru": "Платье" },
+    { "en": "Skirt", "ru": "Юбка" },
+    { "en": "Sweater", "ru": "Свитер" },
+    { "en": "Hat", "ru": "Шапка" },
+    { "en": "Shoes", "ru": "Обувь" },
+    { "en": "Gloves", "ru": "Перчатки" }
+  ]
+},
+{
+  "topic": {
+    "ru": "Приложения",
+    "en": "Apps"
+  },
+  "words": [
+    { "ru": "Инстаграм", "en": "Instagram" },
+    { "ru": "ТикТок", "en": "TikTok" },
+    { "ru": "Ютуб", "en": "YouTube" },
+    { "ru": "Ватсап", "en": "WhatsApp" },
+    { "ru": "Телеграм", "en": "Telegram" },
+    { "ru": "Спотифай", "en": "Spotify" },
+    { "ru": "Твиттер", "en": "Twitter" },
+    { "ru": "2ГИС", "en": "2GIS" },
+    { "ru": "Чат ГПТ", "en": "ChatGPT" },
+    { "ru": "АлиЭкспресс", "en": "AliExpress" },
+    { "ru": "Блок Бласт", "en": "Block Blast" },
+    { "ru": "ВКонтакте", "en": "VK" },
+    { "ru": "Тему", "en": "Temu" }
+  ]
+},
+{
+  "topic": {
+    "ru": "Компании",
+    "en": "Companies"
+  },
+  "words": [
+    { "ru": "Apple", "en": "Apple" },
+    { "ru": "Samsung", "en": "Samsung" },
+    { "ru": "SpaceX", "en": "SpaceX" },
+    { "ru": "Amazon", "en": "Amazon" },
+    { "ru": "Google", "en": "Google" },
+    { "ru": "Microsoft", "en": "Microsoft" },
+    { "ru": "Coca Cola", "en": "Coca Cola" },
+    { "ru": "Sony", "en": "Sony" },
+    { "ru": "Hyundai", "en": "Hyundai" },
+    { "ru": "Adidas", "en": "Adidas" },
+    { "ru": "McDonald's", "en": "McDonald's" },
+    { "ru": "KFC", "en": "KFC" }
+  ]
+},
+{
+  "topic": {
+    "ru": "Природные явления",
+    "en": "Natural Phenomena"
+  },
+  "words": [
+    { "ru": "Дождь", "en": "Rain" },
+    { "ru": "Снег", "en": "Snow" },
+    { "ru": "Гроза", "en": "Thunderstorm" },
+    { "ru": "Молния", "en": "Lightning" },
+    { "ru": "Радуга", "en": "Rainbow" },
+    { "ru": "Туман", "en": "Fog" },
+    { "ru": "Ветер", "en": "Wind" },
+    { "ru": "Землетрясение", "en": "Earthquake" },
+    { "ru": "Вулкан", "en": "Volcano" },
+    { "ru": "Цунами", "en": "Tsunami" }
+  ]
+},
+{
+  "topic": {
+    "ru": "Музыкальные жанры",
+    "en": "Music Genres"
+  },
+  "words": [
+    { "ru": "Рок", "en": "Rock" },
+    { "ru": "Поп", "en": "Pop" },
+    { "ru": "Рэп", "en": "Rap" },
+    { "ru": "Джаз", "en": "Jazz" },
+    { "ru": "Классика", "en": "Classical" },
+    { "ru": "Электронная музыка", "en": "Electronic" },
+    { "ru": "Метал", "en": "Metal" },
+    { "ru": "Хип-хоп", "en": "Hip-hop" },
+    { "ru": "Блюз", "en": "Blues" },
+    { "ru": "Хип-хоп", "en": "Hip-hop" }
+  ]
+},
+{
+  "topic": {
+    "ru": "Части тела",
+    "en": "Body Parts"
+  },
+  "words": [
+    { "ru": "Голова", "en": "Head" },
+    { "ru": "Рука", "en": "Arm" },
+    { "ru": "Нога", "en": "Leg" },
+    { "ru": "Глаз", "en": "Eye" },
+    { "ru": "Ухо", "en": "Ear" },
+    { "ru": "Нос", "en": "Nose" },
+    { "ru": "Рот", "en": "Mouth" },
+    { "ru": "Спина", "en": "Back" },
+    { "ru": "Палец", "en": "Finger" },
+    { "ru": "Колено", "en": "Knee" }
+  ]
+}
+
+
+
   ]
 }

@@ -230,3 +230,298 @@ html.light .backbutton {
   background: linear-gradient(#2F2F2F 0%, #2F2F2F 15%, #9a7335 50%, #2F2F2F 85%, #2F2F2F 100%);
   color: #fff;
 }
+
+
+
+
+.openmodal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2F2F2F;
+  color: white;
+  text-decoration: none;
+  width: 60px;
+  height: 51px;
+  font-size: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+}
+.qricon {
+  width: 30px;
+  height: 30px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Центрируем контент */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  position: relative; /* Это нужно! */
+  background: #2F2F2F;
+  padding: 30px;
+  border-radius: 20px;
+  transform: scale(0.7);
+  transition: transform 0.3s ease;
+  background-color: #2F2F2F;
+  width: 250px;
+}
+
+.modal.open .modal-content {
+  transform: scale(1);
+}
+
+#closeModal {
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2F2F2F;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #77DF9F;
+  border-radius: 100px;
+  padding: 10px;
+  width: 90px;
+}
+.home {
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2F2F2F;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #77DF9F;
+  border-radius: 100px;
+  padding: 10px;
+  width: 90px;
+}
+.home:active, #closeModal:active {
+  filter: brightness(50%);
+}
+.modaltitle {
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+.modalcontainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+
+
+.openmodal2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2F2F2F;
+  color: white;
+  text-decoration: none;
+  width: 60px;
+  height: 51px;
+  font-size: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+}
+.modal2 {
+  position: absolute;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Центрируем контент */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal2.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content2 {
+  position: relative;
+  background: #2F2F2F;
+  padding: 30px;
+  border-radius: 20px;
+  transform: scale(0.7);
+  transition: transform 0.3s ease;
+  background-color: #2F2F2F;
+  width: 250px;
+}
+
+.modal2.open .modal-content2 {
+  transform: scale(1);
+}
+
+#closeModal2 {
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2F2F2F;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #77DF9F;
+  border-radius: 100px;
+  padding: 10px;
+  width: 90px;
+}
+.home2 {
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2F2F2F;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #77DF9F;
+  border-radius: 100px;
+  padding: 10px;
+  width: 90px;
+}
+.home2:active, #closeModal2:active {
+  filter: brightness(50%);
+}
+.modaltitle2 {
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+.modalcontainer2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+
+
+
+.hidden {
+  display: none;
+}
+#results {
+  position: absolute;
+  top: 50px;
+  margin: 20px;
+}
+.res {
+  text-align: center;
+}
+
+
+#results {
+  padding: 20px;
+}
+
+.results-title {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
+  background: #2F2F2F;
+  padding: 8px 20px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.roles-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.role-box {
+  background: #2F2F2F;
+  padding: 20px;
+  border-radius: 20px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.role-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.green {
+  color: #77DF9F;
+}
+
+.orange {
+  color: #ffb14b; /* или какой цвет для геккона */
+}
+
+.role-list p {
+  font-size: 16px;
+  color: white;
+  margin: 2px 0;
+}
+
+.secret-word-box {
+  background: #2F2F2F;
+  padding: 15px 30px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.secret-word-title {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.secret-word-value {
+  font-size: 22px;
+  color: white;
+}
+
+.finish-btn {
+  background: #77DF9F;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 16px;
+  color: #2F2F2F;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+}
+html.dark .finish-btn {
+  background-color: #77DF9F;
+  color: #2F2F2F;
+}
+/* Цвет для светлой темы */
+html.light .finish-btn {
+  background-color: #2F2F2F;
+  color: #ffffff;
+}
+.finish-btn:active {
+  filter: brightness(50%);
+}
+
+#chameleon-result-title {
+  margin-top: 0px;
+}
+#gecko-result-title {
+  margin-top: 0px;
+}

@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const backBtn = document.getElementById("openModal2");
+  const backIcon = backBtn?.querySelector("img");
+  const currentTheme = localStorage.getItem("theme") || "dark";
+  if (backIcon) {
+    backIcon.src = currentTheme === "dark" ? "img/back.png" : "img/back2.png";
+  }
   const translations = {
     en: {
       player: "PLAYER",
@@ -6,8 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
       gecko: "You are a GECKO",
       topic: "Topic",
       playAgain: "Restart",
-      endGame: "Finish the game",
-      confirmEnd: "Are you sure you want to end the game?"
+      finishLabel: "Finish the game",
+      confirmEnd: "Are you sure you want to end the game?",
+      modalLabel1: "Finish the game?",
+      modalLabel2: "No",
+      modalLabel3: "Yes",
+      modalLabel4: "Go back?",
+      modalLabel5: "No",
+      modalLabel6: "Yes",
+      resultsTitle: "Results",
+      chameleonResult: "Chameleon(s):",
+      geckoResult: "Gecko(s):",
+      wordResult: "Topic word:",
+      finalExit: "Finish the game"
     },
     ru: {
       player: "ИГРОК",
@@ -15,27 +32,31 @@ document.addEventListener("DOMContentLoaded", () => {
       gecko: "Вы — ГЕККОН",
       topic: "Тема",
       playAgain: "Заново",
-      endGame: "Завершить игру",
-      confirmEnd: "Вы точно хотите завершить игру?"
+      finishLabel: "Завершить игру",
+      confirmEnd: "Вы точно хотите завершить игру?",
+      modalLabel1: "Завершить игру?",
+      modalLabel2: "Нет",
+      modalLabel3: "Да",
+      modalLabel4: "Вернуться назад?",
+      modalLabel5: "Нет",
+      modalLabel6: "Да",
+      resultsTitle: "Результаты",
+      chameleonResult: "Хамелеон(ы):",
+      geckoResult: "Геккон(ы):",
+      wordResult: "Загаданное слово:",
+      finalExit: "Завершить игру"
     }
   };
 
   const currentLang = localStorage.getItem("lang") || "en";
   const t = translations[currentLang];
 
-  const backBtn = document.getElementById("back-button");
-  const backIcon = backBtn?.querySelector("img");
-  const currentTheme = localStorage.getItem("theme") || "dark";
-  if (backBtn) {
-    backIcon.src = currentTheme === "dark" ? "img/back.png" : "img/back2.png";
-    backBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const confirmBack = confirm(t.confirmEnd);
-      if (confirmBack) {
-        window.history.back();
-      }
-    });
-  }
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key]) {
+      el.textContent = t[key];
+    }
+  });
 
   const gameData = JSON.parse(sessionStorage.getItem("gameData"));
   if (!gameData) {
@@ -71,12 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (role === "геккон") {
       const geckoWord = gameData.geckoWords?.[gameData.roles.length - 1 - index] || "???";
       wordLine = `
-  <div class="gecko-content">
-    <p class="gecko-label">${t.gecko}</p>
-    <p class="g-word-label">${geckoWord}</p>
-  </div>
-`;
-;
+        <div class="gecko-content">
+          <p class="gecko-label">${t.gecko}</p>
+          <p class="g-word-label">${geckoWord}</p>
+        </div>`;
     } else {
       wordLine = `<p class="word-label">${topicWord}</p>`;
     }
@@ -153,16 +172,85 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.getElementById("restart-button").textContent = t.playAgain;
-  document.getElementById("end-game-btn").textContent = t.endGame;
-
   document.getElementById("restart-button").addEventListener("click", () => {
     location.reload();
   });
 
-  document.getElementById("end-game-btn").addEventListener("click", () => {
-    if (confirm(t.confirmEnd)) {
-      location.href = "index.html";
-    }
+  // Модалка «Завершить игру»
+  const modal = document.getElementById('centerModal');
+  const openBtn = document.getElementById('openModal');
+  const closeBtn = document.getElementById('closeModal');
+  const confirmEndBtn = document.getElementById('confirmEnd');
+
+  if (openBtn && modal && closeBtn && confirmEndBtn) {
+    openBtn.addEventListener('click', () => {
+      modal.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('open');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+      }
+    });
+
+    confirmEndBtn.addEventListener('click', () => {
+      // Скрыть end-screen
+      document.getElementById('end-screen').classList.add('hidden');
+      // Показать результаты
+      document.getElementById('results').classList.remove('hidden');
+      modal.classList.remove('open');
+
+      // Заполнить результаты
+      const chameleons = [];
+    const geckos = [];
+
+    gameData.roles.forEach((role, index) => {
+      const playerNumber = index + 1;
+      if (role === "хамелеон") chameleons.push(`${t.player} №${playerNumber}`);
+      if (role === "геккон") geckos.push(`${t.player} №${playerNumber}`);
+    });
+
+    // Заполнить текст
+    document.getElementById("chameleon-result-title").textContent = `${t.chameleonResult}`;
+document.getElementById("gecko-result-title").textContent = `${t.geckoResult}`;
+
+// Генерируем список построчно
+const chamList = document.getElementById("chameleon-list");
+const geckList = document.getElementById("gecko-list");
+
+chamList.innerHTML = chameleons.length 
+  ? chameleons.map(p => `<p>${p}</p>`).join('')
+  : `<p>-</p>`;
+
+geckList.innerHTML = geckos.length 
+  ? geckos.map(p => `<p>${p}</p>`).join('')
+  : `<p>-</p>`;
+    document.getElementById("word-result").textContent = `${t.wordResult} ${gameData.word || '-'}`;
   });
+  }
+
+  // Модалка «Назад»
+  const modal2 = document.getElementById('centerModal2');
+  const openBtn2 = document.getElementById('openModal2');
+  const closeBtn2 = document.getElementById('closeModal2');
+
+  if (openBtn2 && modal2 && closeBtn2) {
+    openBtn2.addEventListener('click', () => {
+      modal2.classList.add('open');
+    });
+
+    closeBtn2.addEventListener('click', () => {
+      modal2.classList.remove('open');
+    });
+
+    modal2.addEventListener('click', (e) => {
+      if (e.target === modal2) {
+        modal2.classList.remove('open');
+      }
+    });
+  }
 });

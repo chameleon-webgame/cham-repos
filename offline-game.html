@@ -28,9 +28,9 @@
 <body>
 
     <div class="background-layer"></div>
-    
+
     <header class="container1">
-        <button class="backbutton" onclick="window.history.back()" id="back-button">
+        <button class="backbutton" id="openModal2">
             <img src="img/back.png" alt="" class="goback">
         </button>
 
@@ -41,11 +41,59 @@
 
     <div class="end-screen hidden" id="end-screen">
         <button id="restart-button" data-i18n="playAgain">Restart</button>
-        <button id="end-game-btn" data-i18n="home">Finish the game</button>
+        <button id="openModal" class="openmodal" data-i18n="finishLabel">Finish the game</button>
     </div>
 
+<!-- Модалка завершения -->
+    <div id="centerModal" class="modal">
+        <div class="modal-content">
+            <h1 class="modaltitle" data-i18n="modalLabel1">Завершить игру?</h1>
+            <div class="modalcontainer">
+                <button id="closeModal" class="closee" data-i18n="modalLabel2">Нет</button>
+                <button class="home" id="confirmEnd" data-i18n="modalLabel3">Да</button>
+            </div>
+        </div>
+    </div>
 
-    
+<!-- Модалка назад -->
+    <div id="centerModal2" class="modal2">
+        <div class="modal-content2">
+            <h1 class="modaltitle2" data-i18n="modalLabel4">Вернуться назад?</h1>
+            <div class="modalcontainer2">
+                <button id="closeModal2" class="closee2" data-i18n="modalLabel5">Нет</button>
+                <button class="home2" onclick="window.location.href='offline.html'" data-i18n="modalLabel6">Да</button>
+            </div>
+        </div>
+    </div>
+
+<!-- Новый блок для результатов -->
+    <!-- RESULTS BLOCK -->
+<div id="results" class="hidden">
+  <h2 class="results-title" data-i18n="resultsTitle">RESULTS</h2>
+
+  <div class="roles-container">
+    <div class="role-box chameleons-box">
+      <p class="role-title green" id="chameleon-result-title">CHAMELEONS:</p>
+      <div class="role-list" id="chameleon-list">
+        <!-- Игроки будут добавляться JS -->
+      </div>
+    </div>
+
+    <div class="role-box geckos-box">
+      <p class="role-title orange" id="gecko-result-title">GECKOS:</p>
+      <div class="role-list" id="gecko-list">
+        <!-- Игроки будут добавляться JS -->
+      </div>
+    </div>
+  </div>
+
+  <div class="secret-word-box">
+    <p class="secret-word-value" id="word-result"></p>
+  </div>
+
+  <button id="final-exit" class="finish-btn" data-i18n="finalExit" onclick="window.location.href='index.html'">FINISH THE GAME</button>
+</div>
+
 
     <script src="script/offline-game.js"></script>
 </body>
