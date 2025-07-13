@@ -10,7 +10,6 @@ html, body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-color: #2A2A2A;
 }
 
 .background-layer {
