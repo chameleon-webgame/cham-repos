@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chameleon Request</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Russo+One&display=swap" rel="stylesheet">
+
+    <script>
+    (function () {
+        const theme = localStorage.getItem("theme") || "dark";
+        document.documentElement.classList.add(theme);
+    })();
+    </script>
+
+    <meta name="theme-color" id="meta-theme-color" content="#0A0A0A">
+    <link rel="stylesheet" href="style/offline.css">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="img/icon192.png">
+    <link rel="apple-touch-icon" href="img/icon192.png">
+
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+
+    <div class="background-layer"></div>
+    
+    <header class="container1">
+        <button class="backbutton" onclick="window.location.href='index.html'" id="back-button">
+            <img src="img/back.png" alt="" class="goback">
+        </button>
+
+        <img src="img/Group 8 (1).png" alt="" class="title">
+    </header>
+
+
+    <form
+    id="myForm" autocomplete="off"
+  
+  style="max-width: 400px; margin-right: 20px; margin-left: 20px; background: #2F2F2F; padding: 20px; border-radius: 20px; font-family: Arial, sans-serif;"
+>
+  <h2 data-i18n="formTitle" style="color: #77DF9F; margin-bottom: 15px; margin-top: 10px; text-align: center;">Предложить свою тему</h2>
+
+  <label data-i18n="labelTheme" style="color: #fff; display: block; margin-bottom: 5px;">
+    Тема:
+  </label>
+  <input
+    type="text"
+    name="theme"
+    required
+    placeholder="Фрукты"
+    data-i18n-placeholder="placeholderTheme"
+    style="width: 93%; padding: 10px; margin-bottom: 15px; border: none; border-radius: 4px; background-color: #212121; color: white;"
+  >
+
+  <label data-i18n="labelWords" style="color: #fff; display: block; margin-bottom: 5px;">
+    Слова:
+  </label>
+  <textarea
+    name="words"
+    required
+    placeholder="Банан
+Яблоко
+Апельсин
+. . .
+. .
+."
+data-i18n-placeholder="placeholderWords"
+    style="width: 93%; height: 170px; padding: 10px; border: none; border-radius: 4px; margin-bottom: 20px; background-color: #212121; color: white;"
+  ></textarea>
+
+  <button data-i18n="submitBtn" type="submit" class="custom-button">Отправить</button>
+</form>
+
+
+
+<style>
+  .custom-button {
+    background: #77DF9F;
+    color: #2F2F2F;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .custom-button:active {
+    filter: brightness(50%);
+  }
+</style>
+    
+
+<script>
+  const form = document.getElementById('myForm');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Отключаем стандартную отправку формы
+
+    const formData = new FormData(form);
+
+    const response = await fetch('https://formspree.io/f/mzzvbrpj', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    });
+
+    if (response.ok) {
+      form.reset(); // Очищаем форму после успешной отправки
+      // Можно добавить console.log, если хочешь видеть в консоли
+      console.log('Форма успешно отправлена');
+    } else {
+      alert('Что-то пошло не так. Попробуйте ещё раз.');
+    }
+  });
+</script>
+<script src="script/request.js"></script>
+
+
+
+</body>
+</html>

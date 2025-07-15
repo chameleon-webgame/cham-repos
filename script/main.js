@@ -10,12 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
       onlineBtn: "ONLINE",
       offlineBtn: "OFFLINE",
       howToPlayBtn: "GAME RULES",
+      requestBtn: "SUGGEST YOUR TOPIC AND WORDS",
       qrLabel: "Chameleon game QR-code"
     },
     ru: {
       onlineBtn: "ОНЛАЙН",
       offlineBtn: "ОФЛАЙН",
       howToPlayBtn: "ПРАВИЛА ИГРЫ",
+      requestBtn: "ПРЕДЛОЖИТЬ СВОЮ ТЕМУ И СЛОВА",
       qrLabel: "QR-код игры Хамелеон"
     },
   };
